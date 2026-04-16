@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Respawn Arena</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Orbitron', sans-serif;
+}
+
+body {
+  background: #020617;
+  color: white;
+}
+
+/* LOADER */
+#loader {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #020617;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+#loader h1 {
+  font-size: 30px;
+  background: linear-gradient(90deg, #00f5ff, #a855f7);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.bg-video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  z-index: -2;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.65);
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.logo {
+  width: 260px;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 0 20px #00f5ff);
+}
+
+.hero h1 {
+  font-size: 50px;
+  background: linear-gradient(90deg, #00f5ff, #a855f7);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.hero p {
+  opacity: 0.7;
+  margin-top: 10px;
+}
+
+.btn {
+  margin-top: 25px;
+  padding: 14px 35px;
+  border-radius: 30px;
+  background: linear-gradient(90deg, #00f5ff, #a855f7);
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.08);
+}
+
+/* SECTION */
+section {
+  padding: 70px 20px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+/* CARDS */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #0f172a;
+  padding: 25px;
+  border-radius: 15px;
+  border: 1px solid #1e293b;
+  transition: 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, #00f5ff, #a855f7);
+  top: -50%;
+  left: -50%;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.card:hover::before {
+  opacity: 0.15;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: #a855f7;
+}
+
+/* GALLERY */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 20px;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* INSTAGRAM */
+.insta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #E1306C;
+  padding: 12px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  color: white;
+  margin-top: 15px;
+}
+
+/* WHATSAPP */
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: white;
+  font-size: 24px;
+  padding: 15px;
+  border-radius: 50%;
+  text-decoration: none;
+  box-shadow: 0 0 15px #25D366;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- LOADER -->
+<div id="loader">
+  <h1>Respawn Arena</h1>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <video autoplay muted loop class="bg-video">
+    <source src="videos/bg.mp4" type="video/mp4">
+  </video>
+  <div class="overlay"></div>
+
+  <img src="images/logo.png" class="logo">
+  <h1>Respawn Arena</h1>
+  <p>Play. Compete. Repeat.</p>
+  <a href="#" class="btn">Enter Arena</a>
+</section>
+
+<!-- FEATURES -->
+<section>
+  <h2>Why Choose Us</h2>
+  <div class="features">
+    <div class="card">🎮 High-End Gaming Setup</div>
+    <div class="card">⚡ Ultra Smooth Performance</div>
+    <div class="card">🏆 Competitive Environment</div>
+    <div class="card">🔥 Neon Gaming Vibes</div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section>
+  <h2>Pricing</h2>
+  <div class="features">
+    <div class="card">Weekday<br><br>₹100/hr</div>
+    <div class="card">Weekend<br><br>₹150/hr</div>
+    <div class="card">Offer<br><br>Buy 2 Get 1 Free</div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section>
+  <h2>Gaming Zone</h2>
+  <div class="gallery">
+    <img src="images/img1.png">
+    <img src="images/img2.png">
+    <img src="images/img3.png">
+    <img src="images/img4.png">
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section>
+  <h2>Contact</h2>
+  <p>Karmvir Business Park, Nadiad</p>
+  <p>DM us on Instagram</p>
+
+  <a href="https://instagram.com/apurrvvv_01" target="_blank" class="insta-btn">
+    <i class="fab fa-instagram"></i> Follow Us
+  </a>
+</section>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/919265015174" target="_blank" class="whatsapp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- SCRIPT -->
+<script>
+window.addEventListener("load", function(){
+  document.getElementById("loader").style.display = "none";
+});
+</script>
+
+</body>
+</html>
